@@ -20,12 +20,12 @@ while(t):
     t-=1
     n,k=[int(i) for i in input().split()]
     a=[int(i) for i in input().split()]
-    ans = []
+    s = []
     arr = [0]*n
     for i in range (n):
         if k|a[i] != k:
             a[i] = a[i-1]|a[(i+1)%(n)]
-            ans.append(i+1)
+            s.append(i+1)
             arr[i]=1
 
     x = 0
@@ -43,5 +43,5 @@ while(t):
             for i in range (y,n+y):
                 if arr[i%n]==0:
                     arr[i%n]==1
-                    ans.append((i%n)+1)
-            print(*ans)
+                    s.append((i%n)+1)
+            print(*s)
